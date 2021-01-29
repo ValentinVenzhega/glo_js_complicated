@@ -1,18 +1,11 @@
-let money = 100000;
-let income = 'фриланс';
-let addExpenses = 'Интернет, Такси, Коммуналка';
-let deposit = true;
-let mission = 1000000;
-let period = 12;
+'use strict';
 
+let num = 266219;
+num = String(num).split('').reduce((sum, current) => sum * current);
+console.log(num);
 
-console.log(typeof money);
-console.log(typeof income);
-console.log(typeof deposit);
-console.log(addExpenses.length);
-console.log(`Период равен ${period} месяцев`);
-console.log(`Цель заработать ${mission} рублей`);
-console.log(addExpenses.toLowerCase().split(', '));
+num = num**3;
+console.log(num);
 
-let budgetDay = money/30;
-console.log(budgetDay);
+num = +String(num).slice(0, 2);
+alert(num);
