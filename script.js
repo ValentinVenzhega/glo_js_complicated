@@ -11,6 +11,7 @@ function foo(name) {
    }
 }
 
-foo('  dfb     ');
-
+foo('  sd sd sd   ');
+foo('scscs s sd sd sd sd s s sd s s sd sd sdsd sd sd  sd ');
+foo(5);
 
