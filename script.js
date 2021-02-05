@@ -1,17 +1,24 @@
 'use strict';
 
+const arr = ['26', '63', '45', '99', '32', '24', '12'];
 
-function foo(name) {
-   if (typeof(name) === 'string' && name.length < 30 && name.trim()) {
-      console.log(name.trim());
-   } else if(typeof(name) === 'string' && name.length >= 30 && name.trim()) {
-      console.log(name.slice(0 , 29).trim() + "...");
-   } else {
-      console.log('не строка');
+for (let i = 0; i < arr.length; i++){
+   if(arr[i][0] === '2' || arr[i][0] === '4') {
+
+      console.log(arr[i]);
    }
 }
 
-foo('  sd sd sd   ');
-foo('scscs s sd sd sd sd s s sd s s sd sd sdsd sd sd  sd ');
-foo(5);
+
+nextPrime:
+for (let i = 2; i <= 100; i++) { // Для всех i...
+
+  for (let j = 2; j < Math.sqrt(i); j++) { // проверить, делится ли число..
+      if (i % j === 0) {
+         continue nextPrime; // не подходит, берём следующее
+      } 
+   }
+
+   console.log(`${i} делится на 1 и на ${i}`);
+}
 
