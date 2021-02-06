@@ -2,11 +2,11 @@
 
 const week = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
    dayCurrent = document.querySelector('.days'),
-   data = new Date(),
+   date = new Date(),
    days = () => {
    week.forEach((item, i) => {
       let div = document.createElement('div');
-      if (i === data.getDay() - 3) { // -1 так как массив
+      if (i === date.getDay() - 3) { // -1 так как массив
          if (item === 'Суббота' || item === 'Воскресенье') {
             div.style.fontStyle = 'italic'; 
          }
