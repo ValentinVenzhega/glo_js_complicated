@@ -2,16 +2,16 @@
 
 
 function foo(name) {
-   if (typeof(name) === 'string' && name.trim().length < 30 && name.trim()) {
+   if (typeof(name) === 'string' && name.trim().length < 30) {
       console.log(name.trim());
-   } else if(typeof(name) === 'string' && name.trim().length >= 30 && name.trim()) {
+   } else if(typeof(name) === 'string' && name.trim().length > 30) {
       console.log(name.trim().slice(0 , 29) + '...' );
    } else {
       console.log('не строка');
    }
 }
 
-foo('  sd sd sd   ');
-foo('                                             scscs s sd sd s                               ');
+foo('  ss  ');
+foo('                                                        s                                       ');
 foo(5);
 
