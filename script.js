@@ -6,14 +6,14 @@ const week = ['Понедельник', 'Вторник', 'Среда', 'Чет�
    days = () => {
    week.forEach((item, i) => {
       let div = document.createElement('div');
-      if (i === data.getDay() - 1) { // -1 так как массив
+      if (i === data.getDay() - 3) { // -1 так как массив
          div.style.fontWeight = '600';
          div.textContent = week[i]; 
-      }
-      if ((i === data.getDay() - 1) && (item === 'Суббота' || item === 'Воскресенье')) { 
-         div.style.fontWeight = '600';
-         div.style.fontStyle = 'italic'; 
-         div.textContent = week[i];
+         if (item === 'Суббота' || item === 'Воскресенье') {
+            div.style.fontWeight = '600';
+            div.style.fontStyle = 'italic'; 
+            div.textContent = week[i];
+         }
       }
       if ((item === 'Суббота' || item === 'Воскресенье')) { 
          div.style.fontStyle = 'italic'; 
