@@ -20,5 +20,6 @@ setInterval(function(){
 		month = ["января", "февраля","марта","апреля","мая","июня","июля", "августа", "сентября", "октября", "ноября", "декабря"];
 
 	dateOne.innerHTML = `${addZero(date.getDate())}.${addZero(date.getMonth() + 1)}.${addZero(date.getFullYear())} - ${addZero(date.getHours())}:${addZero(date.getMinutes())}:${addZero(date.getSeconds())}`;
-	dateTwo.innerHTML = `Сегодня ${days[date.getDay()]} ${date.getDay()} ${month[date.getMonth()]} ${date.getFullYear()} года, ${date.getHours()} ${declOfNum(date.getHours(), [ 'день', 'дня', 'дней' ])}  ${date.getMinutes()} ${declOfNum(date.getMinutes(), [ 'минута', 'минуты', 'минут' ])} ${date.getSeconds()} ${declOfNum(date.getSeconds(), [ 'секунда', 'секунды', 'секунд' ])}`;
+	dateTwo.innerHTML = `Сегодня ${days[date.getDay()]} ${date.getDay()} ${month[date.getMonth()]} ${date.getFullYear()} года, ${date.getHours()} ${declOfNum(date.getHours(), [ 'час', 'часа', 'часов' ])}  ${date.getMinutes()} ${declOfNum(date.getMinutes(), [ 'минута', 'минуты', 'минут' ])} ${date.getSeconds()} ${declOfNum(date.getSeconds(), [ 'секунда', 'секунды', 'секунд' ])}`;
 }, 1000);
+
