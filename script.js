@@ -27,8 +27,5 @@ setInterval(function(){
 
 
 	dateOne.innerHTML = `${date.toLocaleDateString()} - ${date.toLocaleTimeString()}`;
-	dateTwo.innerHTML = `Сегодня ${month} ${year} года, 
-      ${hour} ${hourText}  ${minute} 
-      ${minuteText} ${second} 
-      ${secondText}`;
+	dateTwo.innerHTML = `Сегодня ${month} ${year} года, ${hour} ${hourText}  ${minute} ${minuteText} ${second} ${secondText}`;
 }, 1000);
