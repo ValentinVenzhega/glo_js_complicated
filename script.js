@@ -1,22 +1,42 @@
 
 'use strict';
 
-const btn = document.querySelector('.btn'),
-   colorText = document.querySelector('.color');
+let car = document.querySelector('.car'),
+start = document.querySelector('.start'),
+reset = document.querySelector('.reset'),
+count = 0;
 
-   function getColor() {
-      let num = "0123456789abcdef",
-      color = "#";
-      for (var i = 0; i < 6; i++) {
-         color += num[(Math.floor(Math.random() * 16))];
-         document.body.style.background = `${color}`;
-      }
-      console.log(color);
-      colorText.textContent = `${color}`;
-      
-   }
+let carInterval;
+let carAnimation = function() {
+	
+	count++;
+	if (count < 100) {
+		carInterval = requestAnimationFrame(carAnimation);
+		car.style.left = count*10 + 'px';
+	} else {
+		start.disabled = true;
+		cancelAnimationFrame(carInterval);
+	}
+	console.log(count);
+};
+let animate = false;
+start.addEventListener('click', function() {
+	if(!animate) {
+		carInterval = requestAnimationFrame(carAnimation);
+		animate = true;
+	} else {
+		cancelAnimationFrame(carInterval);
+		animate = false;
+	}
+	
+});
 
-
-   btn.addEventListener('click', function() {
-      getColor();
-   });
+reset.addEventListener('click', function() {
+	count = 0;
+	car.style.left = count + 'px';
+	carAnimation();
+	cancelAnimationFrame(carInterval);
+	start.disabled = false;
+	animate = false;
+	
+});
