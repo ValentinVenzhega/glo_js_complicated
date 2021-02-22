@@ -7,7 +7,7 @@ reset = document.querySelector('.reset'),
 count = 0;
 
 let carInterval;
-let carAnimation = function() {
+let carAnimation = () => {
 	
 	count++;
 	if (count < 100) {
@@ -20,7 +20,7 @@ let carAnimation = function() {
 	console.log(count);
 };
 let animate = false;
-start.addEventListener('click', function() {
+start.addEventListener('click', () => {
 	if(!animate) {
 		carInterval = requestAnimationFrame(carAnimation);
 		animate = true;
@@ -31,7 +31,7 @@ start.addEventListener('click', function() {
 	
 });
 
-reset.addEventListener('click', function() {
+reset.addEventListener('click', () => {
 	count = 0;
 	car.style.left = count + 'px';
 	carAnimation();
