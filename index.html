@@ -1,30 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Конвертер валют на JavaScript</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="card">
+				<form>
+					<h1 class="h2">Конвертер валют</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
+					<div class="courses">
+						<div class="course-item card card-body">
+							<div class="course-item-title">Курс USD</div>
+							<div class="course-item-value course-usd">--.--</div>
+						</div>
+						<div class="course-item card card-body">
+							<div class="course-item-title">Курс EUR</div>
+							<div class="course-item-value course-eur">--.--</div>
+						</div>
+					</div>
 
-    </style>
-</head>
+					<div class="box">
+						<div class="box-elem">
+							<label for="name">Отдаю RUB получаю: <span class="span-one">USD</span></label>
+							<select id="select-one">
+								<option value="USD">USD — Доллар США</option>
+								<option value="EUR">EUR — Евро</option>
+							</select>
+							<div class="box-result">
+								<div>
+									<input id="input-one" autofocus/>
+								</div>
+								<div>
+									<input disabled id="result-one"/>
+								</div>
+							</div>
+						</div>
+						<div class="box-elem">
+							<label for="name">Отдаю <span class="span-two">USD</span> получаю: RUB</label>
+							<select id="select-two">
+								<option value="USD">USD — Доллар США</option>
+								<option value="EUR">EUR — Евро</option>
+							</select>
+							<div class="box-result">
+								<div>
+									<input id="input-two" autofocus/>
+								</div>
+								<div>
+									<input disabled id="result-two"/>
+								</div>
+							</div>
+						</div>
+						<!-- <div class="box-elem">
+							<label for="name">Получаю:</label>
+							<select
+								id="select">
+								<option value="USD">USD — Доллар США</option>
+								<option value="EUR">EUR — Евро</option>
+								<option value="RUB">RUB — Рубли</option>
+							</select>
+						</div> -->
+					</div>
 
-<body>
-
-<select id="cars">
-    <option value="no">Выберите тачку</option>
-    <option value="bmw">bmw</option>
-    <option value="volvo">volvo</option>
-</select>
-
-<div id="output">
-    выбери тачку
-</div>
-
-
-<script src="script.js"></script>
-</body>
-
+					<!-- <div class="box-result">
+						<div>
+							<input id="input" autofocus/>
+						</div>
+						<div>
+							<input id="result"/>
+						</div>
+					</div> -->
+				</form>
+			</div>
+		</div>
+		<script src="main.js"></script>
+	</body>
 </html>

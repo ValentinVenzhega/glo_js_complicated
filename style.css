@@ -1,0 +1,82 @@
+body {
+    font-size: 20px;
+}
+
+label {
+    margin-bottom: 20px;
+}
+
+select {
+    height: 40px;
+}
+
+input {
+    height: 30px;
+    width: 141px;
+    font-size: 20px;
+}
+.box {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-elem {
+    border: 1px solid #000000;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 380px;
+    border: 1px solid #000000;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+.courses {
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: space-around;
+}
+
+.course-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-elem {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .box-elem:first-child {
+    margin-right: 15px;
+} */
+
+.box-result {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.course-item-title {
+    font-weight: 700;
+    font-size: 18px;
+}
+.course-item-value {
+    font-size: 32px;
+    font-weight: 300;
+}
+
+.course-item-value.top {
+    color: rgb(255, 51, 51);
+}
+
+.course-item-value.bottom {
+    color: rgb(19, 189, 61);
+}
