@@ -1,42 +1,39 @@
+document.addEventListener('DOMContentLoaded', () => {
+	'use strict';
 
-'use strict';
+	const select = document.getElementById('cars'),
+		output = document.getElementById('output'),
 
-let car = document.querySelector('.car'),
-start = document.querySelector('.start'),
-reset = document.querySelector('.reset'),
-count = 0;
+		success = (data) => {
+			data.cars.forEach(item => {
+				if (item.brand === select.value) {
+					const { brand, model, price } = item;
+					output.innerHTML = `Тачка ${brand} ${model} <br>
+						Цена: ${price}$`;
+				}
+			});
+		},
 
-let carInterval;
-let carAnimation = () => {
-	
-	count++;
-	if (count < 100) {
-		carInterval = requestAnimationFrame(carAnimation);
-		car.style.left = count*10 + 'px';
-	} else {
-		start.disabled = true;
-		cancelAnimationFrame(carInterval);
-	}
-	console.log(count);
-};
-let animate = false;
-start.addEventListener('click', () => {
-	if(!animate) {
-		carInterval = requestAnimationFrame(carAnimation);
-		animate = true;
-	} else {
-		cancelAnimationFrame(carInterval);
-		animate = false;
-	}
-	
-});
+		error = () => output.innerHTML = 'Произошла ошибка',
 
-reset.addEventListener('click', () => {
-	count = 0;
-	car.style.left = count + 'px';
-	carAnimation();
-	cancelAnimationFrame(carInterval);
-	start.disabled = false;
-	animate = false;
-	
+		getData = () => {
+			return new Promise((resolve, reject) => {
+				const request = new XMLHttpRequest();
+				request.open('GET', './cars.json');
+				request.setRequestHeader('Content-type', 'application/json');
+				request.send();
+				
+				request.addEventListener('readystatechange', () => {
+					if (request.readyState === 4 && request.status === 200) {
+						const data = JSON.parse(request.responseText);
+						resolve(success(data));
+					} else {
+						reject();
+					}
+				});
+				
+		});
+	};
+
+	select.addEventListener('change', () => getData().then(success).catch(error));
 });
