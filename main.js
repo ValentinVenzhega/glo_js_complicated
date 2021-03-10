@@ -1,3 +1,4 @@
+'use strict';
 
 const rates = {},// новый объект с нашими валютами
    elementUSD = document.querySelector('.course-usd'),
@@ -65,54 +66,6 @@ selectOne.addEventListener('change',  convertValue);
 
 selectTwo.addEventListener('change',  convertValue);
 inputTwo.addEventListener('change',  convertValue);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// получаем корсы валют
-// async function getCurrencies () {
-//    const response = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
-
-//    const data = await response.json();
-
-//    const result = await data;
-
-//    rates.USD = result.Valute.USD;
-//    rates.EUR = result.Valute.EUR;
-
-//    console.log(rates);
-
-//    elementUSD.textContent = rates.USD.Value.toFixed(2);
-//    elementEUR.textContent = rates.EUR.Value.toFixed(2);
-
-//    // меняет цвет при уменьшении или увеличении
-//    if (rates.USD.Value > rates.USD.Previus) {
-//       elementUSD.classList.add('top');
-//    } else {
-//       elementUSD.classList.add('bottom');
-//    }
-
-//    if (rates.EUR.Value > rates.EUR.Previus) {
-//       elementEUR.classList.add('top');
-//    } else {
-//       elementEUR.classList.add('bottom');
-//    }
-
-// }
-// getCurrencies ();
-
 
 
 
